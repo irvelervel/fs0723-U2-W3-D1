@@ -48,3 +48,55 @@ const teacher = {
 // in altri linguaggi, questa cosa è follia! per creare un oggetto, bisogna PRIMA stabilirne il tipo, la forma.
 // perchè ogni tanto questa cosa è una limitazione in JS?
 // questa cosa è una limitazione quando VOGLIO creare tanti oggetti uguali uno dopo l'altro...
+
+// creiamo un oggetto dal nulla piuttosto complesso, grazie alla notazione letterale di JS:
+
+const house = {
+  buildingColor: 'lightgreen',
+  numberOfFloors: 3,
+  'garden-sqm': 25,
+  families: ['Rossi', 'Bianchi'],
+  explode: function () {
+    console.log('BOOM!')
+  },
+}
+
+console.log(house.buildingColor)
+console.log(house.families[0])
+house.explode() // invocazione del metodo explode
+
+// ---
+
+const person = {
+  firstName: 'Giovanni',
+  lastName: 'Storti',
+  sayHello: function () {
+    console.log('Ciao, io mi chiamo ' + this.firstName) // 'Ciao, io mi chiamo Giovanni'
+  },
+}
+
+person.sayHello()
+
+// limitazioni di questo approccio?
+
+const dog1 = {
+  name: 'Fifo',
+  breed: 'French Bulldog',
+}
+
+const dog2 = {
+  name: 'Fufy',
+  breed: 'Labrador',
+}
+
+const dog3 = {
+  name: 'Ciccio',
+  bred: 'Pomeranian', // ERRORE TYPO
+}
+
+// come evitare questi errori?
+// anche se in JS possiamo creare un oggetto senza il proprio "stampino", a volte è utile AVERE una struttura
+// da seguire, in modo da non fare errori sul lungo periodo...
+
+// questo metodo esiste, e in JS si chiama "funzione costruttore"
+// passiamo a "constructor.js"
